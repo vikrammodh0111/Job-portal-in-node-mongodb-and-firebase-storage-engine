@@ -1,0 +1,109 @@
+{{#if login}}
+{{#if user.isCandidate}}
+<nav class="white container-fluid z-depth-0">
+	<div class="nav-wrapper container">
+		<a href="/" class="brand-logo black-text">Jobs<span class="red-text">foryou</span>.in</a>
+		<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+				class="material-icons black-text">sort</i></a>
+
+		<ul class="right hide-on-med-and-down">
+			<li><a href="/" class="black-text navLinks">
+					<i class="material-icons">home</i>
+				</a></li>
+			<li><a href="#!" class="dropdown-trigger navLinks" data-target="dropdown1">
+					<i class="material-icons ">more_vert</i>
+				</a></li>
+		</ul>
+	</div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+	<li><a href="/" class="black-text"><i class="material-icons green-text">home</i> Home</a></li>
+	<li><a href="#about" class="black-text navLinks">
+			about
+		</a></li>
+	<li><a href="/job-listing" class="black-text navLinks">find job</a></li>
+	<li><a href="/how-its-work" class="black-text navLinks">How its works</a></li>
+	<li><a href="/login" class="black-text navLinks">login</a></li>
+	<li><a href="/register" class="black-text navLinks">signup</a></li>
+</ul>
+
+<ul id='dropdown1' class='dropdown-content'>
+	<li><a href="#!" class="black-text"> <i class="material-icons green-text">bookmark_outline</i> Saved job</a></li>
+	<li><a href="/myapplied" class="black-text"> <i class="material-icons">check</i> Applied Jobs</a></li>
+	<li><a href="/my-profile" class="black-text"> <i class="material-icons brown-text">account_circle</i> My
+			profile</a>
+	</li>
+	<li><a href="/logout" class="black-text"> <i class="material-icons red-text">settings_power</i> Logout</a></li>
+</ul>
+
+{{else}}
+
+{{#if user.isRecruiter}}
+<nav class="white container-fluid z-depth-0">
+	<div class="nav-wrapper container">
+		<a href="/" class="brand-logo black-text">Jobs<span class="red-text">foryou</span>.in</a>
+		<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+				class="material-icons black-text">sort</i></a>
+
+		<ul class="right hide-on-med-and-down">
+			<li><a href="#!" class="dropdown-trigger navLinks" data-target="dropdown1">
+					<i class="material-icons ">more_vert</i>
+				</a></li>
+		</ul>
+	</div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+	<li><a href="/" class="black-text"><i class="material-icons green-text">home</i> Home</a></li>
+</ul>
+
+<ul id='dropdown1' class='dropdown-content'>
+	<li><a href="/" class="black-text"><i class="material-icons green-text">dashboard</i> Dashboard</a></li>
+	<li><a href="/Application-received" class="black-text"><i class="material-icons">check</i> Application received</a>
+	</li>
+	<li><a href="/MyUplaoded" class="black-text"><i class="material-icons yellow-text">view_list</i> Job List</a></li>
+	<li><a href="/Upload-new-job" class="black-text"><i class="material-icons blue-text">cloud_upload</i> Upload new
+			job</a></li>
+	<li class="divider" tabindex="-1"></li>
+	<li><a href="/RecruiterProfile" class="black-text"><i class="material-icons green-text">settings_new</i> Account
+			Settings</a>
+	</li>
+	<li><a href="/logout" class="black-text"><i class="material-icons red-text">settings_power</i> Logout</a></li>
+</ul>
+{{/if}}
+
+{{/if}}
+{{else}}
+{{!-- When No One is Logged in --}}
+<nav class="white container-fluid z-depth-0">
+	<div class="nav-wrapper container">
+		<a href="/" class="brand-logo black-text">Jobs<span class="red-text">foryou</span>.in</a>
+		<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+				class="material-icons black-text">sort</i></a>
+
+		<ul class="right hide-on-med-and-down">
+			<li><a href="/" class="black-text navLinks">
+					Home
+				</a></li>
+			<li><a href="#about" class="black-text navLinks">
+					about
+				</a></li>
+			<li><a href="/job-listing" class="black-text navLinks">find job</a></li>
+			<li><a href="/how-its-work" class="black-text navLinks">How its works</a></li>
+			<li><a href="/register" class="black-text navLinks">signup</a></li>
+			<li><a href="/login" class="black-text navLinks">login</a></li>
+		</ul>
+	</div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+	<li><a href="/" class="black-text"><i class="material-icons green-text">home</i> Home</a></li>
+	<li><a href="#about" class="black-text navLinks">
+			about
+		</a></li>
+	<li><a href="/job-listing" class="black-text navLinks">find job</a></li>
+	<li><a href="/how-its-work" class="black-text navLinks">How its works</a></li>
+	<li><a href="/register" class="black-text navLinks">signup</a></li>
+</ul>
+{{/if}}

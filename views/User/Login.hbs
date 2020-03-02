@@ -1,0 +1,62 @@
+<div class="container">
+	<div class="row registerSection">
+		<div class="row">
+			<div class="title2">
+				All in one login system
+			</div>
+			<div style="font-size: 1.1em; text-align: center;">
+				<p>Candidate and recruiter, we have new login system for both of our user recruiter and job seeker
+				</p>
+			</div>
+			<form class="col s12" style="margin-top: 30px;" action="/Login" method="POST">
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="email" type="email" name="email" class="validate">
+						<label for="email">Email</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s11">
+						<input type="password" name="password" class="validate" id="myInput">
+						<label for="password">Password</label>
+					</div>
+					<div class="col s1 center">
+						<p>
+							<label>
+								<input type="checkbox" onclick="showPassword()" />
+								<span></span>
+							</label>
+						</p>
+					</div>
+				</div>
+				{{#if hasErrors}}
+				<p class="red-text center" style="text-transform: capitalize;">
+					{{#each messages}}
+					Ops {{this}}
+					{{/each}}
+				</p>
+				{{/if}}
+				<div class="right">
+					<a href="/imrecruiter" class="btn blue">
+						Recruiter account register
+					</a>
+					<a href="/register" class="btn green">
+						Create account for me
+					</a>
+					<input type="submit" class="btn" value="Login Now">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+	function showPassword() {
+		var x = document.getElementById("myInput");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
+		}
+	}
+</script>

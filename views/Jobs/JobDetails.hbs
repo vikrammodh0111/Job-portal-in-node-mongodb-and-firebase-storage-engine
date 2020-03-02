@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<div class="aboutJobSection">
+				<div>
+					<div class="jobTitle">
+						{{data.jobTitle}}
+					</div>
+					<div class="savelink right">
+						<a href="#!saved">
+							<i class="material-icons black-text">bookmark_outline</i>
+						</a>
+					</div>
+					<span class="">
+						<b class="green-text">{{data.companyName}}</b> At
+						<i class="material-icons left">location_on</i><b>{{data.jobLocation}}</b>
+					</span>
+					<div class="" style="margin-top: 20px!important; margin-bottom: 30px;">
+						<i class="material-icons left">business_center</i> {{data.jobType}}
+					</div>
+				</div>
+				<hr>
+				<div style="font-size: 1.1em; font-weight: 600; margin-top: 20px;">
+					Starting salary <span class="grey-text"> ₹ {{data.salaryStart}} /- </span>
+				</div>
+				<div style="font-size: 1.1em; font-weight: 600; margin-top: 20px;">
+					Skill required <span class="grey-text">{{data.skill}}</span>
+				</div>
+				<div style="font-size: 1.1em; font-weight: 600; margin-top: 20px;">
+					Exp Needed <span class="grey-text">{{data.minimumExperience}} Year</span>
+				</div>
+				<div class="desc">
+					<p>{{data.description}}</p>
+				</div>
+				<div class="" style="margin-top: 30px;">
+					<a href="/apply-to-company/{{data.id}}" class="btn grey waves-effect waves-green">
+						Apply Here
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

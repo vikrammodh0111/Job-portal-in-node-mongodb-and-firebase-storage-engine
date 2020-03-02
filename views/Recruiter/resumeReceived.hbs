@@ -1,0 +1,8 @@
+{{#if length}}
+{{#each jobs}}
+Applied By : {{this.fullname}}
+<a href="{{this.resume}}" target="_blank">View Resume</a>
+{{/each}}
+{{else}}
+Not Found
+{{/if}}

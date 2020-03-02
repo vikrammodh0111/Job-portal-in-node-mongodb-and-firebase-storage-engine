@@ -1,0 +1,63 @@
+<div class="container">
+	<div class="row" style="margin-top: 50px;">
+		<div class="title2">
+			This will be displayed to your Candidate
+		</div>
+		<p class="grey-text" style="font-size: 1em; font-weight: 600; text-align: center">Lorem ipsum dolor sit amet
+			consectetur
+			adipisicing elit. Iure,
+			nihil.</p>
+		<form class="col s12" action="/postJob" method="POST">
+			<div class="row">
+				<div class="input-field col s6">
+					<input id="title" name="jobTitle" type="text" class="validate">
+					<label for="title">Job Title</label>
+				</div>
+				<div class="input-field col s6">
+					<input id="salary" name="salary" type="number" class="validate">
+					<label for="salary">Starting Salary</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="comapanyname" name="companyName" type="text" class="validate">
+					<label for="comapanyname">Company Name</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<textarea id="textarea1" name="description" data-length="500"
+						class="materialize-textarea"></textarea>
+					<label for="textarea1">Job Description</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s4">
+					<input id="Skills" name="skills" type="text" class="validate">
+					<label for="Skills">Skills</label>
+				</div>
+				<div class="input-field col s4">
+					<input id="exp" name="exp" type="number" class="validate">
+					<label for="exp">Min experience</label>
+				</div>
+				<div class="input-field col s4">
+					<input id="vacancy" name="vacancy" type="number" class="validate">
+					<label for="vacancy">Vacancy Avaliable</label>
+				</div>
+				<div class="input-field col s4">
+					<input id="location" name="location" type="text" class="validate">
+					<label for="location">Job location</label>
+				</div>
+				<div class="input-field col s8">
+					<input id="jobType" name="jobType" type="text" class="validate">
+					<label for="jobType">Job type</label>
+					<small>By default : Full time</small>
+				</div>
+			</div>
+			<div class="right">
+				<a href="/MyUplaoded" class="btn grey black-text">View My Uploaded</a>
+				<input type="submit" class="btn green" value="Uplaod">
+			</div>
+		</form>
+	</div>
+</div>

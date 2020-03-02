@@ -1,0 +1,71 @@
+{{#if length}}
+<div class="title2">
+	job application status
+</div>
+<div class="row" style="padding: 10px;">
+	{{#each data}}
+	<div class="col l4 s12" style="margin-top: 20px;">
+		<div class="innerBox z-depth-1">
+			<div>
+				<div class="appliedJobName">
+					{{this.jobId.jobTitle}}
+				</div>
+				<div class="appliedText">
+					<i class="material-icons left grey-text">
+						storefront
+					</i>
+					{{this.jobId.companyName}}
+				</div>
+				<div class="appliedText">
+					<i class="material-icons left grey-text">
+						location_on
+					</i>
+					{{this.jobId.jobLocation}}
+				</div>
+			</div>
+			<div class="divider" style="margin-top: 15px;"></div>
+			<div class="">
+				<a href="#{{this.jobId.id}}"
+					class="btn detailsLink modal-trigger black white-text waves-effect waves-green">
+					Detailed View <i class="material-icons right">arrow_right_alt</i>
+				</a>
+				<form action="/delete-job-application/{{this.id}}" style="margin-top: 10px;" method="POST">
+					<button type="submit" class="btn">
+						Delete this application
+					</button></form>
+			</div>
+		</div>
+	</div>
+	<div id="{{this.jobId.id}}" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4 class="pink-text">{{this.jobId.companyName}}</h4>
+			<b>Job posted by :- {{this.companyId.email}} </b>
+			<div class="modal-styling">
+				<p>{{this.jobId.description}}</p>
+				<p><i class="material-icons left grey-text">sports_handball</i> {{this.jobId.skill}}</p>
+				<p class="green-text">Offered Salary : {{this.jobId.salaryStart}}</p>
+				<p>Vacancy Avaliable : {{this.jobId.numberOfAvaliableVacancy}}</p>
+				<div style="margin-top: 20px;">
+					<a href="{{this.resume}}" target="_blank">View my submitted resume</a>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-red btn-flat close red-text">OK!</a>
+		</div>
+	</div>
+	{{/each}}
+
+</div>
+
+
+
+
+{{else}}
+<div class="container center">
+	<div class="title2">
+		You didn't applied for any company
+	</div>
+	<a href="/">Start applying</a>
+</div>
+{{/if}}

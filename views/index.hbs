@@ -1,0 +1,256 @@
+{{#if login}}
+{{!-- When Candidate Login --}}
+{{#if user.isCandidate}}
+<div class="container-fluid firstSection">
+	<div class="container" style="margin-top: 100px;">
+		<div class="title">
+			Find your <span class="grey-text">dream job</span> here
+		</div>
+		<p class="center" style="font-weight: 600;">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium incidunt earum veniam quas quod
+			pariatur, eos cupiditate aspernatur accusamus dolor.
+		</p>
+	</div>
+	<nav class="container white z-depth-1-half searchBar" style="margin-top: 30px;">
+		<div class="nav-wrapper">
+			<form>
+				<div class="input-field">
+					<input id="search" placeholder="Search a job..." type="search" required>
+					<label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
+					<i class="material-icons">close</i>
+				</div>
+			</form>
+		</div>
+	</nav>
+</div>
+<div class="title2">
+	All Listed Jobs
+</div>
+{{#if joblength}}
+<div class="row container" style="margin-top: 50px;">
+	{{#each jobs}}
+	<div class="col s12 l4">
+		<div class="card">
+			<div class="z-depth-1">
+				<div class="card-image blue lighten-3" style="height: 100px;">
+					<a href="/about-this-job/{{this.id}}" class="black-text">
+						<span class="card-title">{{this.jobTitle}}</span>
+					</a>
+				</div>
+				<div class="card-content">
+					<p style="color: grey; font-size: 1.2em; margin-bottom: 10px;">{{this.companyName}}</p>
+					<p style="margin-top: 10px;"><i class="material-icons left">
+							business_center
+						</i> <span class="grey-text">{{this.jobType}}</span></p>
+					<p style="margin-top: 10px;"><i class="material-icons left">location_on</i> <span
+							class="grey-text">{{this.jobLocation}}</span></p>
+					<p style="margin-top: 10px;"><i class="material-icons left">sports_handball
+						</i> <span class="grey-text">{{this.skill}}</span>
+						<p style="margin-top: 10px;">Starting salary :- <span class="grey-text">₹
+								{{this.salaryStart}}
+								/-</span></p>
+					</p>
+				</div>
+				<div class="card-action">
+					<a href="/about-this-job/{{this.id}}">Apply Here</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</div>
+{{/if}}
+{{!-- When Recruiter is Login --}}
+{{else}}
+
+<div class="title2" style="margin-top: 25px;margin-top: 25px;">
+	Hey welcome {{user.email}}
+</div>
+
+<div class="row container">
+	<div class="col s12 l3">
+		<div class="card blue lighten-3">
+			<div class="card-content white-text">
+				<span class="card-title center black-text">{{countJob}}</span>
+				<p class="center black-text">
+					Total Jobs Uploaded
+				</p>
+			</div>
+			<div class="card-action center">
+				<a href="#" class=" black-text">View Details</a>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 l3">
+		<div class="card blue lighten-3">
+			<div class="card-content white-text">
+				<span class="card-title center black-text">0</span>
+				<p class="center black-text">
+					Intrested in your job
+				</p>
+			</div>
+			<div class="card-action center">
+				<a href="#" class=" black-text">View Details</a>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 l3">
+		<div class="card blue lighten-3">
+			<div class="card-content white-text">
+				<p class="center black-text">
+					Uplaod new job
+				</p>
+			</div>
+			<div class="card-action center">
+				<a href="/upload-new-job" class=" black-text">Upload</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{/if}}
+{{!-- When No One Login --}}
+{{else}}
+{{!-- SecondSection --}}
+<div class="container secondSection">
+	<div class="title2">
+		How it works
+	</div>
+	<p class="center" style="font-weight: 600;">
+		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas voluptatem ratione doloremque omnis sunt quo?
+	</p>
+	<div class="row" style="margin-top: 50px;">
+		<div class="col s12 l4">
+			<div class="innerBox center card yellow lighten-3">
+				<span class="">
+					<i class="material-icons card-icon green-text">
+						adb
+					</i>
+				</span>
+				<div class="card-title">
+					Create free account
+				</div>
+				<div class="card-content">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, temporibus.
+				</div>
+			</div>
+		</div>
+		<div class="col s12 l4">
+			<div class="innerBox center card red lighten-4">
+				<span class="">
+					<i class="material-icons card-icon blue-text">
+						search
+					</i>
+				</span>
+				<div class="card-title">
+					search job
+				</div>
+				<div class="card-content">
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, mollitia!
+				</div>
+			</div>
+		</div>
+		<div class="col s12 l4">
+			<div class="innerBox center card blue lighten-4">
+				<span class="">
+					<i class="material-icons card-icon yellow-text">
+						description
+					</i>
+				</span>
+				<div class="card-title">
+					search job
+				</div>
+				<div class="card-content">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, laborum!
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{#if hasErrors}}
+<p class="red-text center" style="text-transform: capitalize;">
+	{{#each messages}}
+	Thanks for subscribing
+	{{/each}}
+</p>
+{{/if}}
+
+<div class="thirdSection container">
+	<div class="row">
+		<div class="col s12 l6">
+			<div class="innerBox">
+				<div class="title2  left">
+					Thousands of hot jobs
+				</div>
+				<p style="font-weight: 600; margin-top: 60px!important; color: grey;">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio eaque sapiente deserunt
+					obcaecati! Unde placeat eos aperiam sed debitis, inventore, sint iusto voluptate delectus,
+					repellendus nulla quo aliquid. Atque, non.
+				</p>
+				<div>
+					<a href="/register" class="btn waves-effect waves-green">Register Now</a>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 l6 hide-on-med-and-down">
+			<div class="innerBox center">
+				<img src="https://cdn0.iconfinder.com/data/icons/restaurant-service-business/64/read-menu-select-list-food-512.png"
+					class="responsive-img" width="250" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+{{!-- Forth Section --}}
+<div class="forthSection container" style="margin-top: 50px;">
+	<div class="row">
+		<div class="col s12 l6 center">
+			<img src="/images/india.png" class="responsive-img" width="300" alt="">
+		</div>
+		<div class="col s12 l6">
+			<div class="innerBox">
+				<div class="title2">
+					Get talented people from anywhere in india
+				</div>
+				<p style="font-weight: 600; color: grey;" style="margin-top: 20px!important;">
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur cupiditate possimus at
+					iusto autem repudiandae temporibus dolores! Quidem, exercitationem enim?
+				</p>
+				<div class="right" style="margin-top: 20px;">
+					<a href="/imrecruiter" class="btn pink waves-effect waves-green">Yes we are hiring</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="subscribeType container-fluid">
+	<div class="row container">
+		<div class="col s12 l6">
+			<div class="title2" style="margin-top: 30px; text-align: left;">
+				subscribe to news letter
+			</div>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolore alias, libero cumque iste illo!
+			</p>
+		</div>
+		<div class="col s12 l6">
+			<div class="row" style="margin-top: 30px;">
+				<form class="col s12" action="/subscribe" , method="POST">
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="email" name="email" type="email" class="validate">
+							<label for="email">Enter Email</label>
+						</div>
+					</div>
+					<div class="right">
+						<a href="/subscribe" class="btn grey waves-effect waves-grey black-text">
+							Subscribe
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{/if}}

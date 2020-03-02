@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="/stylesheets/form.css" />
+</head>
+
+<body>
+  {{> Header }}
+  {{{body}}}
+  {{> Footer }}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/javascripts/code.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.dropdown-trigger').dropdown();
+      $('input#input_text, textarea#textarea1').characterCounter();
+      $('.modal').modal();
+    });
+  </script>
+
+  {{!-- Firebase Code Start --}}
+  <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAtpbqkIUghQ2sNFXR-jLZ1Nyq3W-s_Wy4",
+      authDomain: "jobsforyou-576b7.firebaseapp.com",
+      databaseURL: "https://jobsforyou-576b7.firebaseio.com",
+      projectId: "jobsforyou-576b7",
+      storageBucket: "jobsforyou-576b7.appspot.com",
+      messagingSenderId: "337576578226",
+      appId: "1:337576578226:web:db6f5458cb80a436b40dab",
+      measurementId: "G-Y9DDN8Y27S"
+    };
+
+    // Firebase initialization
+    firebase.initializeApp(firebaseConfig);
+
+    // setting storage to firebase storage
+    var storage = firebase.storage();
+
+    // Getting Images 
+    const image = document.getElementById('imagePath');
+    const imageShowcase = document.getElementById('imgaeTag');
+    const uploadLabel = document.getElementById('uploadLabel');
+    const submitButton = document.getElementById('submit');
+
+
+    // variable for returning Uploaded Image Url
+    const productImageUrl = document.getElementById('productImageUrl');
+
+    // FileUpload Function
+    function handleFileUploadChange(e) {
+      uploadLabel.innerHTML = 'Uploading.. .'
+      selectedFile = e.target.files[0];
+      storage.ref("/images").child(selectedFile.name).put(selectedFile)
+        .then(data => {
+          return data.ref.getDownloadURL();
+        })
+        .then(url => {
+          uploadLabel.innerHTML = 'Uploaded';
+          imageShowcase.src = url;
+          productImageUrl.value = url;
+          submitButton.disabled = false;
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }
+
+    // Performing File Upload
+    document.querySelector('#imagePath').addEventListener('change', handleFileUploadChange);
+
+  </script>
+  {{!-- Firebase Code Ends --}}
+
+</body>
+
+</html>

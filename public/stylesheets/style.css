@@ -1,0 +1,135 @@
+body {
+  font-family: "Quicksand";
+}
+
+.brand-logo {
+  font-weight: 700;
+}
+
+.dropdown-content {
+  width: 450px !important;
+  background: whitesmoke;
+  box-shadow: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-top: 50px !important;
+}
+
+.navLinks {
+  text-transform: uppercase;
+  color: black;
+}
+
+.navLinks:hover {
+  background: transparent;
+}
+
+.firstSection {
+  height: 60vh;
+}
+
+::placeholder {
+  color: black;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 3em;
+  text-align: center;
+}
+
+.secondSection {
+  margin-top: 0px;
+  /* border: 1px solid red; */
+}
+
+.title2 {
+  font-weight: 700;
+  font-size: 2em;
+  text-align: center;
+}
+
+.innerBox {
+  padding: 20px;
+  border: 5px;
+}
+
+.card-title {
+  font-weight: 700 !important;
+  font-size: 1.5em !important;
+  text-transform: capitalize;
+}
+
+.card-icon {
+  font-size: 5em;
+}
+
+.card-content {
+  font-weight: 600;
+}
+
+.thirdSection {
+  margin-top: 50px;
+}
+
+.btn {
+  box-shadow: none;
+  text-transform: capitalize;
+}
+
+.card {
+  box-shadow: none;
+}
+
+.subscribeType {
+  padding: 20px;
+  background: whitesmoke;
+  height: 200px;
+}
+.subscribeType {
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.aboutJobSection {
+  background: whitesmoke !important;
+  border-radius: 2px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.jobTitle {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 20px !important;
+}
+
+.desc {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.registerSection {
+  margin-top: 50px;
+}
+
+.appliedJobName {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.appliedText {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.detailsLink {
+  margin-top: 10px;
+  text-align: right !important;
+}
+
+.modal-styling {
+  margin-top: 20px !important;
+  font-size: 15px;
+}

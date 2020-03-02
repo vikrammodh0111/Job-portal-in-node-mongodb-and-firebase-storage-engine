@@ -1,0 +1,74 @@
+<div class="container">
+	<div class="row" style="margin-top: 50px;">
+		<div class="title2">
+			This will be Affact With Your Application
+		</div>
+		<p class="grey-text" style="font-size: 1em; font-weight: 600; text-align: center">Lorem ipsum dolor sit amet
+			consectetur
+			adipisicing elit. Iure,
+			nihil.</p>
+		<form class="col s12" action="/apply/{{item.id}}" method="POST">
+			<div class="row">
+				<div class="input-field col s7">
+					<input id="name" name="name" type="text" class="validate">
+					<label for="name">Your full name</label>
+				</div>
+				<div class="input-field col s5">
+					<input id="contact" name="contact" type="number" class="validate">
+					<label for="contact">Contact Number</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input id="education" name="education" type="text" class="validate">
+					<label for="education">Last Degree</label>
+				</div>
+				<div class="input-field col s6">
+					<input id="course" name="course" type="text" class="validate">
+					<label for="course">Last / Pursuing Course</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s4">
+					<input id="speacilization" name="speacilization" type="text" class="validate">
+					<label for="speacilization">Describe your speacility</label>
+				</div>
+				<div class="input-field col s4">
+					<input id="university" name="university" type="text" class="validate">
+					<label for="university">University name</label>
+				</div>
+				<div class="input-field col s4">
+					<input id="year" name="year" type="text" class="validate">
+					<label for="year">Last passed out year</label>
+				</div>
+			</div>
+			<div class="row">
+				{{!-- <div class="input-field col s6">
+					<i class="material-icons prefix pink-text">attach_file</i>
+					<input id="resume" name="resume" type="text" class="validate">
+					<label for="resume">Your resume link</label>
+				</div> --}}
+				<div class="file-field input-field">
+					<div class="btn">
+						<span>Upload Resume</span>
+						<input id="imagePath" type="file">
+					</div>
+					<div class="file-path-wrapper">
+						<input name="resume" class="file-path validate" type="text">
+						<input type="hidden" id="productImageUrl" name="productImageUrl">
+					</div>
+				</div>
+				<div class="row">
+					<img src="" id="imgaeTag" class="responsive-img" width="300" alt="">
+					<label for="" id="uploadLabel">Please Upload PDF file only</label>
+				</div>
+				<div class="input-field col s12">
+					<div class="right">
+						<button id="submit" disabled type="submit" class="btn pink">Apply</button>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>
