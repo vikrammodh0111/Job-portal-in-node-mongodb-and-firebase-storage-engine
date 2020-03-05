@@ -110,7 +110,7 @@ router.get("/MyUplaoded", isRecruiter, async (req, res, next) => {
   });
 });
 
-router.post("/delete-job/:id", async (req, res, next) => {
+router.post("/delete-job/:id", isRecruiter, async (req, res, next) => {
   const deleteJob = await Job.findOneAndDelete(
     { _id: req.params.id },
     (err, data) => {
@@ -180,7 +180,7 @@ function notRecruiter(req, res, next) {
     return next();
   }
   if (req.user.isRecruiter == false) {
-    return res.redirect("/dashboard");
+    return res.redirect("/");
   }
   res.redirect("/");
 }

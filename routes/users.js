@@ -95,7 +95,7 @@ router.get("/apply-to-company/:id", isCandidate, async (req, res, next) => {
 
 router.post("/apply/:id", isCandidate, async (req, res, next) => {
   const jobID = await Job.findById({ _id: req.params.id });
-  console.log(jobID);
+  // console.log(jobID);
   const user = req.user;
   const newApply = new Apply({
     userId: user.id,
@@ -110,10 +110,28 @@ router.post("/apply/:id", isCandidate, async (req, res, next) => {
     passOutYear: req.body.year,
     resume: req.body.productImageUrl
   });
+  console.log(newApply);
   newApply
     .save()
     .then(data => {
       // console.log(data);
+      const mailOptions = {
+        from: "nadimrajpura01@gmail.com",
+        to: user.email,
+        subject: "Register confirmation from jobsforyou",
+        text:
+          "Hey" +
+          newApply.fullname +
+          " You have successfully applied in company" +
+          jobID.companyId
+      };
+      transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("Email sent " + info.response);
+        }
+      });
       res.redirect("/myApplied");
     })
     .catch(err => {
@@ -135,16 +153,20 @@ router.get("/myApplied", isCandidate, async (req, res, next) => {
   });
 });
 
-router.post("/delete-job-application/:id", async (req, res, next) => {
-  await Apply.findByIdAndRemove({ _id: req.params.id }, (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      // console.log(data);
-      res.redirect("/myApplied");
-    }
-  });
-});
+router.post(
+  "/delete-job-application/:id",
+  isCandidate,
+  async (req, res, next) => {
+    await Apply.findByIdAndRemove({ _id: req.params.id }, (err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        // console.log(data);
+        res.redirect("/myApplied");
+      }
+    });
+  }
+);
 
 router.get("/logout", (req, res, next) => {
   req.logout();

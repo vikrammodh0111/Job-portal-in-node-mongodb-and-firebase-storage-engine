@@ -24,6 +24,11 @@ body {
   background: transparent;
 }
 
+.background-image {
+  background-position: center;
+  background-size: cover;
+}
+
 .firstSection {
   height: 60vh;
 }
@@ -39,7 +44,7 @@ body {
 }
 
 .secondSection {
-  margin-top: 0px;
+  margin-top: 50px;
   /* border: 1px solid red; */
 }
 
