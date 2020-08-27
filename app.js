@@ -24,16 +24,20 @@ const mongoose = require("mongoose");
 
 dotenv.config();
 require("./Config/Passport");
-mongoose.connect(
-  process.env.DB || 
-  "mongodb://127.0.0.1:27017/jobsforyou",
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  (err, result) => {
-    if (err) {
-      console.log(err);
+(async () => {
+  await mongoose.connect(
+    process.env.DB ||
+    "mongodb://127.0.0.1:27017/jobsforyou",
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      }else{
+        console.log('mongo done')
+      }
     }
-  }
-);
+  );
+})();
 // view engine setup
 app.engine(
   ".hbs",
@@ -79,12 +83,12 @@ app.use("/", usersRouter);
 app.use("/", recruiterRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
@@ -94,4 +98,11 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
+app.listen(process.env.PORT || 5000, (err) => {
+  if (err) {
+    console.log('err', err)
+  } else {
+    console.log('serving is running');
+  }
+})
 module.exports = app;
