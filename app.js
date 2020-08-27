@@ -25,6 +25,7 @@ const mongoose = require("mongoose");
 dotenv.config();
 require("./Config/Passport");
 mongoose.connect(
+  process.env.DB || 
   "mongodb://127.0.0.1:27017/jobsforyou",
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err, result) => {

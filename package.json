@@ -3,8 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "install": "npm install",
     "start": "node ./bin/www",
     "run": "npm start"
+  },
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x",
+    "yarn": "1.x"
   },
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.3",
